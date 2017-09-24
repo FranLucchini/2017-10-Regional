@@ -26,7 +26,7 @@ Ahora bien, comprar un tipo de cubierto tiene un costo asociado, del mismo modo 
 \end{problemDescription}
 
 \begin{inputDescription}
-Cada input consiste en dos lineas. La primera linea contiene dos enteros $T$ $C$ separados por un espacio que codifican la cantidad de tenedores y cuchillos que posee el padre de Nelman. La segunda linea contiene cuatro enteros separados por un espacio: $P_t$ $P_c$ $R_t$ $R_c$ que codifican respectivamente el precio de un tenedor, el precio de un cuchillo, el costo de reciclaje de un tenedor y el costo de reciclaje de un cuchillo.
+Cada input consiste en dos lineas. La primera linea contiene tres enteros $T$ $P_t$ $R_t$ separados por un espacio que codifican la cantidad de tenedores, el precio de comprar un tenedor, y el precio de reciclar un tenedor. La segunda linea contiene tres enteros $C$ $P_c$ y $R_c$ que codifican la cantidad de cuchillos, el precio de comprar un cuchillo y el precio de reciclar un cuchillo.
 \end{inputDescription}
 
 \begin{outputDescription}
@@ -34,9 +34,9 @@ Debes entregar un entero describiendo el mínimo costo que deberá pagar el padr
 \end{outputDescription}
 
 \begin{scoreDescription}
-  \score{10} $1 \leq T,C \leq 10$, $ 0 \leq P_t, P_c \leq 10$, $ R_t= R_c = 0$.
   \score{20} $1 \leq T,C \leq 10$, $ 0 \leq P_t, P_c, R_t, R_c, \leq 10$.
-  \score{70} $1 \leq T,C \leq 10^5$, $ 0 \leq P_t, P_c, R_t, R_c, \leq 10^3$.
+  \score{20} $1 \leq T,C \leq 10^3$, $ 0 \leq R_t= R_c = P_t = P_c \leq 10^3$.
+  \score{60} $1 \leq T,C \leq 10^5$, $ 0 \leq P_t, P_c, R_t, R_c, \leq 10^3$.
 \end{scoreDescription}
 
 \begin{sampleDescription}
