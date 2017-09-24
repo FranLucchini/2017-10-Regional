@@ -1,0 +1,74 @@
+\documentclass{oci}
+\usepackage[utf8]{inputenc}
+
+\title{Ocimatic}
+\codename{ocimatic}
+
+\begin{document}
+\begin{problemDescription}
+  El correo electrónico es sin duda una de las herramientas de comunicación
+  más utilizadas hoy en día.
+  Los usuarios más asiduos pueden enviar decenas o incluso cientos de correos
+  diarios.
+  El alto volumen de correos es un problema para estos usuarios, quienes deben
+  recordar cuáles no han recibido respuesta y así, en caso de ser necesario,
+  intentar comunicarse nuevamente.
+  Ocimatic es una herramienta que ayuda a lidiar con este problema, enviando
+  notificaciones a sus usuarios cada vez que alguno de sus correos no ha
+  recibido respuesta dentro de un plazo determinado.
+  
+  Ocimatic funciona de forma muy sencilla.
+  Los usuarios puede configurar el plazo $D$ en días que está dispuesto a
+  esperar por una respuesta.
+  Cada vez que un correo es enviado, Ocimatic configura un evento para que se
+  ejecute luego de $D$ días.
+  Cuando el evento es ejecutado transcurridos los $D$ días, Ocimatic verifica
+  si el correo ya recibió una respuesta y notifica al usuario en caso de no
+  haber recibido una.
+  Por ejemplo, si un usuario tiene configurado el plazo en 2 días y envía un
+  correo un lunes, Ocimatic deberá verificar el miércoles si el correo ya recibió
+  una respuesta.
+
+  Muchos de los usuarios han comenzado a quejarse porque desearían que Ocimatic
+  solo considerara los días hábiles dentro del plazo.
+  Por ejemplo, si un usuario tiene configurado el plazo en 2 días y envía un
+  correo el viernes, no espera ser notificado el domingo, sino el martes.
+  De la misma forma, si envía un correo el sábado o el domingo esperaría ser
+  notificado el miércoles.
+
+  Tomando en cuenta las quejas de sus usuarios los desarrolladores quieren
+  modificar Ocimatic para que solo considere los días hábiles.
+  Para esto, necesitan saber la cantidad real de días que Ocimatic debe esperar
+  dada la cantidad de días hábiles $D$ que el usuario configuró.
+\end{problemDescription}
+
+\begin{inputDescription}
+  Un caso de prueba corresponde al envío de un correo y está descrito en una
+  línea con dos enteros $D$ y $W$.
+  $D$ corresponde a la cantidad de días hábiles que el usuario está dispuesto a
+  esperar.
+  $W$ es un entero entre 1 y 7 que corresponde al día de la semana en que el
+  correo fue enviado (lunes=1, martes=2, miércoles=3, jueves=4, viernes=5,
+  sábado=6 y domingo=7).
+\end{inputDescription}
+
+\begin{outputDescription}
+  La salida debe contener un único entero correspondiente a la cantidad real de
+  días que Ocimatic debe esperar antes de verificar si el correo recibió
+  respuesta.
+\end{outputDescription}
+
+\begin{scoreDescription}
+  \score{5} Se probarán varios casos donde $W=1$ y $0 < D \leq 4$.
+  \score{10} Se probarán varios casos donde $1 \leq W \leq 5$ y $0 < D \leq 5$.
+  \score{20} Se probarán varios casos donde $0 < D \leq 10$.
+  \score{30} Se probarán varios casos donde $0 < D \leq 10^5$
+  \score{35} Se probarán varios casos donde $0 < D \leq 10^{10}$
+\end{scoreDescription}
+
+\begin{sampleDescription}
+\sampleIO{sample-1}
+\sampleIO{sample-2}
+\end{sampleDescription}
+
+\end{document}
