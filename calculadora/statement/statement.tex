@@ -2,8 +2,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lipsum}
 
-\title{Rotar}
-\codename{rotar}
+\title{La calculadora del almacén}
+\codename{calculadora}
 
 \begin{document}
 \begin{problemDescription}
@@ -11,20 +11,23 @@
   \centerline{\includegraphics[scale=0.5]{upside-down.jpg}}
 
 
-Camilo y Mauricio compran siempre en el mismo almacén de la esquina de su casa. %, el almacén de Objetos Caros e Inservibles (OCI).
+Camilo y Mauricio compran siempre en el mismo almacén de la esquina. %, el almacén de Objetos Caros e Inservibles (OCI).
 Compran pan, queso, yoghurt, bebidas, etc. 
 La vendedora, al otro lado del mesón, tiene una tremenda calculadora que usa para sacar las cuentas. 
-Apreta botones, opera valores, y al final el total queda en el visor de la calculadora, 
+Aprieta botones, opera valores, y al finalizar el total queda en el visor de la calculadora, 
 desde donde Camilo y Mauricio leen cuánto tienen que pagar.
 
 Camilo siempre se molesta en silencio pues la vendedora nunca se da el tiempo de girar la calculadora para que ellos puedan ver el monto.
 Pero esta vez, caminando de regreso a casa, Camilo explotó.
 
 ---\emph{¡Odio tener que girar el número mentalmente para saber cuánto pagar!} ---expresó molesto Camilo, a lo que Mauricio respondió: \\
----\emph{Yo no me hago problemas. La mayoría de las cantidades mantienen su valor si las giras en 180 grados. Así que simplemente pago lo que leo en la calculadora desde nuestro lado.} \\
+---\emph{Yo no me hago problemas. La mayoría de las números mantienen su valor si los giras en 180 grados. Así que simplemente pago lo que leo en la calculadora desde nuestro lado.} \\
 -- \emph{¡¿Qué?!} ---gritó espantado Camilo.
 
-Para apoyar su punto, Mauricio menciona como ejemplo los números 906, 26592 y 18181, que en su versión original y al rotarlos en 180 grados (como si giraras el visor de la calculadora) se leen exactamente igual. La siguiente figura confirma lo dicho por Mauricio.
+Para apoyar su punto, Mauricio menciona como ejemplo los números 906, 26592 y
+18181, que en su versión original y al rotarlos en 180 grados (como si giraras
+el visor de la calculadora) se leen exactamente igual. La siguiente figura
+confirma la afirmación de Mauricio.
 
 \bigskip
 \bigskip
@@ -41,8 +44,7 @@ Para apoyar su punto, Mauricio menciona como ejemplo los números 906, 26592 y 1
 \bigskip
 
 
-Camilo por el contrario dice que hay muchos más números que no se verán iguales después de girar la calculadora
-y no entiende qué montos ha pagado Mauricio cada vez.
+Camilo por el contrario dice que hay muchos más números que no se verán iguales después de girar la calculadora.
 Camilo da como ejemplo los números 999, 5128 y 379009 que no cumplen lo dicho por Mauricio, como se ve en la siguiente figura.
 
 \bigskip
@@ -60,11 +62,16 @@ Camilo da como ejemplo los números 999, 5128 y 379009 que no cumplen lo dicho p
 \bigskip
 
 
-La discusión llevó a una pelea interminable camino a casa, Mauricio diciendo que la vida es linda y no hay para qué estresarse, 
-Camilo molesto pensando en toda las veces que Mauricio pagó el monto incorrecto, o simplemente un monto sin sentido. 
-Decidieron que mejor no peleaban más y hacían un programa que verificara lo que decía cada uno.
-Tu tarea entonces es hacer un programa que reciba una secuencia de dígitos que se escribieron en la calculadora y 
-verifique si al rotar la calculadora en 180 grados el valor que queda es igual al inicial, como dice Mauricio, o si 
+La discusión llevó a una pelea interminable camino a casa, Mauricio diciendo que
+la vida es linda y no hay para qué estresarse, Camilo molesto pensando en toda
+las veces que Mauricio pagó el monto incorrecto, o simplemente un monto sin
+sentido.
+Después de un rato decidieron que en vez de pelear mejor hacían un programa que
+verifique quien tiene la razón en cada caso.
+
+Tu tarea es hacer un programa que reciba una secuencia de dígitos escritos
+en la calculadora y verifique si al rotar la calculadora en 180
+grados el valor que queda es igual al inicial, como dice Mauricio, o si
 este cambia, como dice Camilo.
 
   
@@ -82,12 +89,17 @@ este cambia, como dice Camilo.
 \end{problemDescription}
 
 \begin{inputDescription}
-La entrada consiste en dos líneas. La primera contiene un entero $N$ que representa a la cantidad de dígitos que se escribieron en la calculadora y la segunda contiene $N$ números separados por un espacio, correspondiente a cada uno de los dígitos escritos en la calculadora.
+  La entrada consiste en dos líneas.
+  La primera contiene un entero $N$ que representa a la cantidad de dígitos que
+  se escribieron en la calculadora.
+  La segunda contiene $N$ números separados por un espacio, correspondientes a
+  cada uno de los dígitos escritos en la calculadora.
 \end{inputDescription}
 
 \begin{outputDescription}
-La salida consiste en una sola línea, la cuál debe tener una de dos palabras: \texttt{Mauricio} ó \texttt{Camilo}, dependiendo
-de cuál de los dos tiene la razón para el número indicado.
+La salida consiste en una sola línea, la cuál debe tener una de dos palabras:
+\texttt{Mauricio} ó \texttt{Camilo}, dependiendo de cuál de los dos tiene la
+razón para el número indicado.
 \end{outputDescription}
 
 \begin{scoreDescription}
