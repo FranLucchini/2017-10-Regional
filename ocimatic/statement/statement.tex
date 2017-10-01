@@ -12,7 +12,7 @@
   diarios.
   El alto volumen de correos es un problema para estos usuarios, quienes deben
   recordar cuáles no han recibido respuesta y así, en caso de ser necesario,
-  intentar comunicarse nuevamente con sus contactos.
+  intentar comunicarse nuevamente con el receptor del correo.
   Ocimatic es una herramienta que ayuda a lidiar con este problema, enviando
   notificaciones a sus usuarios cada vez que alguno de sus correos no ha
   recibido respuesta dentro de un plazo determinado.
@@ -38,8 +38,9 @@
 
   Tomando en cuenta las quejas de sus usuarios los desarrolladores quieren
   modificar Ocimatic para que solo considere los días hábiles.
-  Para esto, necesitan saber la cantidad real de días que Ocimatic debe esperar
-  dada la cantidad de días hábiles $D$ que el usuario configuró.
+  Para esto, necesitan saber la cantidad total de días, considerando los fines
+  de semana, que Ocimatic debe esperar dada la cantidad de días hábiles $D$ que
+  el usuario configuró.
 \end{problemDescription}
 
 \begin{inputDescription}
@@ -53,7 +54,7 @@
 \end{inputDescription}
 
 \begin{outputDescription}
-  La salida debe contener un único entero correspondiente a la cantidad real de
+  La salida debe contener un único entero correspondiente a la cantidad total de
   días que Ocimatic debe esperar antes de verificar si el correo recibió
   respuesta.
 \end{outputDescription}
