@@ -12,7 +12,7 @@
 # To generate test cases using test plan use `ocimatic gen-input`
 
 
-[Subtask 1 - solutions/correct/Main.java]
+[Subtask 1]
   # Use sample data as test
   1 ; copy statement/sample-1.in
   1 ; copy statement/sample-2.in
@@ -46,7 +46,7 @@
 
 
 
-[Subtask 2 - solutions/correct/Main.java]
+[Subtask 2]
   # Random tests
   1 ; random.py3 10 900 1000
   1 ; random.py3 20 900 1000
