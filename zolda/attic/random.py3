@@ -10,7 +10,7 @@ maxX = int(sys.argv[5])
 minY = int(sys.argv[6])
 maxY = int(sys.argv[7])
 
-print(n)
+print(str(n) + " " + str(k))
 
 for _ in range(n):
     x = random.randint(minX, maxX)
