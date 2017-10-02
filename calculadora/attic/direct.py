@@ -43,9 +43,6 @@ def invertible(arr):
 n_min = int(sys.argv[2])
 n_max = int(sys.argv[3])
 answer = int(sys.argv[4])
-print(n_min)
-print(n_max)
-print(answer)
 
 n = random.randint(n_min, n_max)
 
