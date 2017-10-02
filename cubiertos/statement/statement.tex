@@ -7,36 +7,43 @@
 
 \begin{document}
 \begin{problemDescription}
-Todos los días, el padre de Nelmancito le cocina y le envía al colegio un potecito con comida junto con un cuchillo y un tenedor. Desgraciadamente, nuestro amigo Nelmancito es un poco descuidado, y suele perder uno o ambos cubiertos.
+Todos los días, el padre de Nelmancito le cocina y le envía al colegio un potecito con comida junto con un cuchillo y un tenedor. Desgraciadamente, nuestro amigo Nelmancito es un poco descuidado y suele perder uno o ambos cubiertos.
 
-Su padre detesta tener una cantidad diferente de cubiertos, por lo cual decide invertir dinero en cubiertos hasta lograr tener la misma cantidad de ambos. Para lograr su cometido tiene dos opciones: o bien comprar un tipo de cubierto, o bien reciclar algunos de sus cubiertos.
+Su padre detesta tener una cantidad diferente de cuchillos y tenedores, por lo que decide invertir dinero en cubiertos hasta lograr tener la misma cantidad de ambos. Para lograr su cometido tiene dos opciones: o bien comprar nuevos cubiertos, o bien reciclar algunos de sus cubiertos.
 
-Por ejemplo, si el papá de Nelmancito tiene 7 tenedores y 12 cuchillos hay muchas formas en las cuales puede lograr su objetivo. Por ejemplo: 
+Por ejemplo, si el papá de Nelmancito tiene 7 tenedores y 12 cuchillos hay muchas formas en las cuales puede lograr su objetivo. Por ejemplo, las siguientes son tres posibles formas: 
+\begin{itemize}
+	\item comprar 5 tenedores (se quedaría con 12 tenedores y 12 cuchillos),
+	\item comprar 3 tenedores y reciclar 2 cuchillos (se quedaría con 10 tenedores y 10 cuchillos),
+	\item reciclar 2 tenedores y reciclar 7 cuchillos (se quedaría con 5 tenedores y 5 cuchillos).
+\end{itemize}
 
-\begin{enumerate}
-	\item comprar 5 tenedores
-	\item comprar 3 tenedores y reciclar 2 cuchillos
-	\item reciclar 6 cuchillos y un tenedor.
-	\item etc.
-\end{enumerate}
-
-Ahora bien, comprar un tipo de cubierto tiene un costo asociado, del mismo modo que reciclar también tiene un costo. Puedes ayudar al padre de Nelmancito a conseguir su objetivo gastando la menor cantidad de dinero posible?
+Ahora bien, comprar un tipo de cubierto tiene un costo asociado, del mismo modo que reciclar también tiene un costo. 
+Dada la cantidad de cuchillos y tenedores que tiene el padre de Nelmancito y los precios de comprar y reciclar cada cubierto, tu tarea
+es ayudarlo a conseguir su objetivo gastando la menor cantidad de dinero posible.
 
 
 \end{problemDescription}
 
 \begin{inputDescription}
-Cada input consiste en dos lineas. La primera linea contiene tres enteros $T$ $P_t$ $R_t$ separados por un espacio que codifican la cantidad de tenedores, el precio de comprar un tenedor, y el precio de reciclar un tenedor. La segunda linea contiene tres enteros $C$ $P_c$ y $R_c$ que codifican la cantidad de cuchillos, el precio de comprar un cuchillo y el precio de reciclar un cuchillo.
+Cada input consiste en dos líneas. La primera línea contiene tres enteros, $T$ $P_t$ y $R_t$ separados por un espacio, que codifican la cantidad de tenedores, el precio de comprar un tenedor, y el precio de reciclar un tenedor, respectivamente. La segunda línea contiene tres enteros, $C$ $P_c$ y $R_c$, que codifican la cantidad de cuchillos, el precio de comprar un cuchillo y el precio de reciclar un cuchillo.
+Todos los enteros en el input serán números entre $0$ y $1000$ ($0\leq T,C,P_t,P_c,R_t,R_c, \leq 1000$).
 \end{inputDescription}
 
 \begin{outputDescription}
-Debes entregar un entero describiendo el mínimo costo que deberá pagar el padre de Nelman para cumplir su objetivo.
+Debes entregar un entero describiendo el mínimo costo que deberá pagar el padre de Nelmancito para cumplir su objetivo.
 \end{outputDescription}
 
+\newpage
+
 \begin{scoreDescription}
-  \score{20} $1 \leq T,C \leq 10$, $ 0 \leq P_t, P_c, R_t, R_c, \leq 10$.
-  \score{20} $1 \leq T,C \leq 10^3$, $ 0 \leq R_t= R_c = P_t = P_c \leq 10^3$.
-  \score{60} $1 \leq T,C \leq 10^5$, $ 0 \leq P_t, P_c, R_t, R_c, \leq 10^3$.
+\score{20} $C=T+1$ y  $R_t= R_c = P_t = P_c$ (o sea, hay exactamente un cuchillo más que un tenedor y el precio de comprar y reciclar es el mismo para todos los cubiertos).
+\score{20} $C=T+1$ (o sea, hay exactamente un cuchillo más que un tenedor, pero los precios de reciclar o comprar pueden ser distintos)
+\score{20} $R_t= R_c = P_t = P_c$ (o sea, el precio de reciclar y comprar es el mismo para cuchillos y tenedores, pero puede haber una cantidad arbitraria de cuchillos y tenedores)
+\score{40} Sin restricciones adicionales.
+%  \score{20} $1 \leq T,C \leq 1000$, $C=T+1$ (o sea hay exactamente un cuchillo más que un tenedor) $ 0 \leq P_t, P_c, R_t, R_c, \leq 10$.
+%  \score{20} $1 \leq T,C \leq 1000$, $ 0 \leq R_t= R_c = P_t = P_c \leq 10^3$.
+%  \score{60} $1 \leq T,C \leq 1000$, $ 0 \leq P_t, P_c, R_t, R_c, \leq 10^3$.
 \end{scoreDescription}
 
 \begin{sampleDescription}
