@@ -4,7 +4,7 @@
 #define invrep(i, n) for(int i = n-1; i >= 0; --i)
 #define pb push_back
 #define coutv(v)  cout << #v << ": "; rep(i, v.size())  cout << v[i] << " "; cout << endl;
-N#define coutvar(n) cout << #n << ": " << n << endl;
+#define coutvar(n) cout << #n << ": " << n << endl;
 
 using namespace std;
 typedef long long intt;
@@ -15,7 +15,7 @@ typedef vector<vector<int>> vvi;
 typedef vector<vector<ii>> vvii;
 
 int main(){
-	ios::sync_with_stdio(0); cin.tie(0);
+  ios::sync_with_stdio(0); cin.tie(0);
   map<int, int> M;
   M[6] = 9;
   M[9] = 6;
@@ -26,11 +26,11 @@ int main(){
   M[1] = 1;
   int N; cin >> N;
   bool invertible = true;
-  vi s(N); rep(i, N) cin >> S[i];
-  rep(i, M){
+  vi s(N); rep(i, N) cin >> s[i];
+  rep(i, N){
     if(M.count(s[i]) == 0 or M[s[i]] != s[s.size()-1-i])
       invertible = false;
-  }
+    }
   cout << (invertible ? "Mauricio" : "Camilo") << endl;
-	return 0;
+  return 0;
 }
