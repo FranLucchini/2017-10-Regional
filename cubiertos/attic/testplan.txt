@@ -1,5 +1,6 @@
 
 # tests
+[Subtask 1]
 # facilitos pa l@s bebit@s.
 1     ; echo.py2 1 2 5 6 7 8
 1     ; echo.py2 7 6 1 1 1 1
@@ -9,6 +10,7 @@
 1     ; echo.py2 1 6 0 0 0 0
 1     ; echo.py2 8 5 1 1 0 1
 
+[Subtask 2]
 # trivial
 2     ; echo.py2 100 675 987 987 987 987
 2     ; echo.py2 1 1 1 1 1 1
@@ -16,6 +18,7 @@
 2     ; echo.py2 444 332 23 23 23 23
 2     ; echo.py2 1000 0 123 123 123 123
 
+[Subtask 3]
 # mas facil que cagar de guata.
 3     ; echo.py2 98765 12345 1234 3543 3534 1223
 3     ; echo.py2 3546 23423 1234 2324 213 1214
