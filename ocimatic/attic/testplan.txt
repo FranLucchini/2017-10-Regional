@@ -12,14 +12,14 @@
 # To generate test cases using test plan use `ocimatic gen-input`
 
 
-[Subtask 1]
+[Subtask 1 - validators/st1.cpp]
   g ; generator.py 0 1 1
   g ; generator.py 0 2 1
   g ; generator.py 0 3 1
   g ; generator.py 0 4 1
 
 
-[Subtask 2]
+[Subtask 2 - validators/st2.cpp]
   g ; generator.py 0 4 1
   g ; generator.py 0 5 1
   g ; generator.py 0 1 4
@@ -34,7 +34,7 @@
   g ; generator.py 0 5 5
 
 
-[Subtask 3]
+[Subtask 3 - validators/st3.cpp]
   g ; generator.py 0 4 1
   g ; generator.py 0 5 1
   g ; generator.py 0 6 1
@@ -53,7 +53,7 @@
   g ; generator.py 0 10 7
 
 
-[Subtask 4]
+[Subtask 4 - validators/st4.cpp]
   g ; generator.py 1 100000 7
   g ; generator.py 2 100000 7
   g ; generator.py 3 100000 7
@@ -70,7 +70,7 @@
   g ; generator.py 0 100000 7
 
 
-[Subtask 5]
+[Subtask 5 - validators/st5.cpp]
   g ; generator.py 1 10000000000 7
   g ; generator.py 2 10000000000 7
   g ; generator.py 3 10000000000 7
