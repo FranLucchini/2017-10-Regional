@@ -3,7 +3,7 @@
 int main()
 {
   registerValidation();
-  int N = inf.readInt(100, 999, "N");
+  int N = inf.readInt(100, 9999, "N");
   inf.readEoln();
   inf.readInt(1, 9, "D1");
   for (int i=2; i<=N; i++)
