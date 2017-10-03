@@ -3,7 +3,7 @@ import sys
 
 random.seed(hash(str(sys.argv)))
 autoreflex = [0, 1, 2, 5, 8]
-mappable = [0, 1, 2, 5, 6, 8, 9]
+mappable = {0, 1, 2, 5, 6, 8, 9}
 d = {0:0, 1:1, 2:2, 5:5, 6:9, 8:8, 9:6, 0:0}
 
 def mapp(arr, m):
@@ -12,10 +12,12 @@ def mapp(arr, m):
 		ans.append(m[el])
 	return ans
 
-def gen_arr(n, alphabet = [0,1,2,3,4,5,6,7,8,9]):
-	ans = []
-	for i in range(n):
-		ans.append(random.choice(alphabet))
+def gen_arr(n, alphabet = {0,1,2,3,4,5,6,7,8,9}):
+	if n == 0:
+		return []
+	ans = [random.choice(list(alphabet - {0}))]
+	for i in range(n-1):
+		ans.append(random.choice(list(alphabet)))
 	return ans
 
 def inv(arr):

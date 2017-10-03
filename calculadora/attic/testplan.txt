@@ -12,7 +12,7 @@
 # To generate test cases using test plan use `ocimatic gen-input`
 
 
-[Subtask 1]
+[Subtask 1 - validators/st1.cpp]
   # N = 1, which means the input is of the form "1 k"
   1 ; direct.py 1 1 1
   1 ; direct.py 1 1 1
@@ -29,7 +29,7 @@
 	1 ; direct.py 1 1 0
 
 
-[Subtask 2]
+[Subtask 2 - validators/st2.cpp]
   # N = 2, which means the input is of the form "2 j k"
   2 ; direct.py 2 2 1
 	2 ; direct.py 2 2 1
@@ -52,7 +52,7 @@
 	2 ; direct.py 2 2 0
   2 ; direct.py 2 2 0
 
-[Subtask 3]
+[Subtask 3 - validators/st3.cpp]
 
 3 ; direct.py 3 3 1
 3 ; direct.py 3 3 1
@@ -75,7 +75,7 @@
 3 ; direct.py 3 3 0
 3 ; direct.py 3 3 0
 
-[Subtask 4]
+[Subtask 4 - validators/st4.cpp]
 
 4 ; direct.py 4 9 1
 4 ; direct.py 4 9 1
@@ -98,7 +98,7 @@
 4 ; direct.py 4 9 0
 4 ; direct.py 4 9 0
 
-[Subtask 5]
+[Subtask 5 - validators/st5.cpp]
 
 5 ; direct.py 10 99 1
 5 ; direct.py 10 99 1
@@ -121,7 +121,7 @@
 5 ; direct.py 10 99 0
 5 ; direct.py 10 99 0
 
-[Subtask 6]
+[Subtask 6 - validators/st6.cpp]
 
 6 ; direct.py 100 9999 1
 6 ; direct.py 100 9999 1
