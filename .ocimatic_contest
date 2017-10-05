@@ -1,0 +1,9 @@
+{
+    "phase": "Regional",
+    "tasks": [
+        "cubiertos",
+        "calculadora",
+        "ocimatic",
+        "zolda"
+    ]
+}
