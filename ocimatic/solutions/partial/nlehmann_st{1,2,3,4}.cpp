@@ -16,8 +16,12 @@ int main() {
   W -= 1;
   int business_days = 0;
   int total_days = 0;
+  if (W == 5 || W == 6) {
+    total_days += 7 - W;
+    W = 0;
+  }
   while(business_days < D) {
-    if (W < 5)
+    if (W < 4 || W == 6)
       business_days += 1;
     total_days += 1;
     W = (W + 1) % 7;
