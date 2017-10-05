@@ -6,7 +6,7 @@ int main() {
   int w;
   long long d, r = 0L;
   cin >> d >> w;
-  if (++w > 4L) {
+  if (--w > 4L) {
     r += 7L - w;
     w = 0L;
   }
