@@ -14,7 +14,7 @@
   la civilización}.
 
   En la última versión del videojuego existe una modalidad donde el personaje
-  principal, Lonk, debe enfrentarse a una horda de \emph{meblins}.
+  principal, \emph{Lonk}, debe enfrentarse a una horda de \emph{meblins}.
   En esta modalidad el escenario corresponde a un plano cartesiano como el que
   se muestra en la figura de más abajo.
   Nuestro héroe se encontrará siempre en la coordenada $(0,0)$ y los meblins
@@ -28,7 +28,7 @@
   \vspace{-0.5em}
   Para pasar de nivel Lonk debe eliminar al menos $K$ meblins del escenario
   usando su poderoso \emph{ataque de giro}.
-  Con este ataque Lonk puede de un solo golpe dañar todo a su alrededor.
+  Con este ataque Lonk puede dañar todo a su alrededor de un solo golpe.
   Dependiendo la potencia que use, Lonk puede variar el radio de alcance de su
   ataque.
   Específicamente, si Lonk escoge un radio $R$ eliminará a todos los meblins que
@@ -43,31 +43,33 @@
     \begin{subfigure}{0.3\textwidth}
       \centering
       \includegraphics[scale=0.8]{zolda2}
-      \caption*{Con R=2 Zolda elimina los 3 meblins requeridos.}
+      \caption*{Con $R=2$ Lonk elimina los 3 meblins requeridos.}
     \end{subfigure}
     \hspace{3em}
     \begin{subfigure}{0.3\textwidth}
       \centering
       \includegraphics[scale=0.8]{zolda3}
-      \caption*{Con R=3 Zolda elimina también 3 meblins.}
+      \caption*{Con $R=3$ Lonk elimina también 3 meblins.}
     \end{subfigure}
   \end{figure}
 
+  Tu objetivo es ayudar a Lonk a encontrar el mínimo radio necesario para eliminar a $K$ moblins de entre todos los que se
+  encuentran en el escenario.
 \end{problemDescription}
 
 \begin{inputDescription}
   La entrada está descrita en varias líneas.
-  La primera linea contiene dos enteros $N$ y $K$ ($0<K\leq N$) correspondientes a la cantidad
+  La primera línea contiene dos enteros $N$ y $K$ ($0<K\leq N$) correspondientes a la cantidad
   de meblins en el escenario y la cantidad que hay que eliminar para pasar de nivel.
-  A continuación se entregan $N$ lineas cada una conteniendo dos enteros $X_i$ y
-  $Y_i$ que representan las coordenadas del i-ésimo meblin.
+  A continuación se entregan $N$ líneas cada una conteniendo dos enteros $X_i$ y
+  $Y_i$ que representan las coordenadas del $i$-ésimo meblin.
   Se garantiza que no habrá dos meblins en la misma posición y que ningún
-  meblin estará en la misma posición que Zolda.
+  meblin estará en la misma posición que Lonk.
 \end{inputDescription}
 
 \begin{outputDescription}
-  La salida debe corresponder a un único entero correspondiente al radio $R$
-  mínimo con el cual es posible eliminar $K$ meblins.
+  La salida debe ser un único entero correspondiente al radio $R$
+  mínimo con el cual Lonk puede eliminar $K$ meblins.
 \end{outputDescription}
 
 \begin{scoreDescription}
