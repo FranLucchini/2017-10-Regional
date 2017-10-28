@@ -25,4 +25,5 @@ int main() {
     minCost = min(minCost, (i - T[0])*T[1] + (C[0] - i)*C[2]);
 
   cout << minCost << endl;
+  return 0;
 }
