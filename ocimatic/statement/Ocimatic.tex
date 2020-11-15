@@ -5,158 +5,117 @@
 \codename{ocimatic}
 
 \begin{document}
-\begin{problemDescription}
-  Hoy en día el correo electrónico es sin duda una de las herramientas más
-  utilizadas.
-  Los usuarios más asiduos pueden enviar decenas o incluso cientos de correos
-  diarios.
-  El alto volumen de correos es un problema para estos usuarios, quienes deben
-  recordar cuáles no han recibido respuesta y así, en caso de ser necesario,
-  intentar comunicarse nuevamente con el receptor del correo.
-  \textbf{Ocimatic es una herramienta que ayuda a lidiar con este problema, enviando
-  notificaciones a sus usuarios cada vez que alguno de sus correos no ha
-  recibido respuesta dentro de un plazo determinado.}
-  
-  Ocimatic funciona de forma muy sencilla.
-  \textbf{
-  Los usuarios puede configurar el plazo $D$ en días que están dispuestos a
-  esperar por una respuesta.
-  Cada vez que un correo es enviado, Ocimatic configura un evento para que se
-  ejecute luego de $D$ días.
-  Cuando el evento es ejecutado transcurridos los $D$ días, Ocimatic verifica
-  si el correo ya recibió una respuesta y notifica al usuario en caso de no
-  haber recibido una.}
-  Por ejemplo, si un usuario tiene configurado el plazo en 2 días y envía un
-  correo un lunes, Ocimatic deberá verificar el miércoles si el correo ya recibió
-  una respuesta.
 
-  \textbf{Muchos de los usuarios han comenzado a quejarse porque desearían que Ocimatic
-  solo considerara los días hábiles dentro del plazo.}
-  Por ejemplo, si un usuario tiene configurado el plazo en 2 días y envía un
-  correo el viernes, no espera ser notificado el domingo, sino el martes.
-  Por otro lado, si envía un correo el sábado o el domingo, sabe que no lo
-  leerán durante el fin de semana y es lo mismo que haberlo enviado el lunes,
-  por lo tanto esperaría ser notificado el miércoles.
-
-  Tomando en cuenta las quejas de sus usuarios los desarrolladores quieren
-  modificar Ocimatic para que solo considere los días hábiles.
-  Para esto, \textbf{necesitan saber la cantidad total de días, considerando los fines
-  de semana, que Ocimatic debe esperar dada la cantidad de días hábiles $D$ que
-  el usuario configuró.}
-\end{problemDescription}
-
-\begin{inputDescription}
-  Un caso de prueba corresponde al envío de un correo y está descrito en una
-  línea con dos enteros $D$ y $W$.
-  $D$ corresponde a la cantidad de días hábiles que el usuario está dispuesto a
-  esperar.
-  $W$ es un entero entre 1 y 7 que corresponde al día de la semana en que el
-  correo fue enviado (lunes=1, martes=2, miércoles=3, jueves=4, viernes=5,
-  sábado=6 y domingo=7).
-\end{inputDescription}
-
-\begin{outputDescription}
-  La salida debe contener un único entero correspondiente a la cantidad total de
-  días que Ocimatic debe esperar antes de verificar si el correo recibió
-  respuesta.
-\end{outputDescription}
-
-\newpage
+\section*{Pauta}
 \begin{scoreDescription}
   \score{5} Se probarán varios casos donde $W=1$ y $0 < D \leq 4$.
-
-  Soluci\'on:
 
   Lo primero que debemos considerar, es que siempre es Lunes en esta subtarea.
   El máximo de días es 4, por lo que a lo más, se esperarán cuatro días. Eso
   significa que no tendremos que contar días del fin de semana. Por lo tanto, los
   días totales de espera son la misma cantidad que $D$.
-
+  
+  \vspace{10mm}
   \score{10} Se probarán varios casos donde $1 \leq W \leq 5$ y $0 < D \leq 5$.
-
-  Soluci\'on:
 
   En esta subtarea, ya no sirve la soluci\'on anterior, porque hay m\'ultiples casos
   en los que se deben contar d\'ias del fin de semana para el total. Por ejemplo, si 
   $D = 4$ y $W = 2$ (Martes), el cuarto d\'ia es S\'abado y Ocimatic esperar\'a hasta
   el Lunes para mandar el aviso, por lo que son 6 d\'ias de espera.
-
-  Una cosa importante que debemos hacer primero es disminuir $W$ en uno para que
-  la cuenta comience desde $0$ en vez de $1$.
-
+  
   Luego, considerando los l\'imites de $D$ y $W$, s\'olo pasaremos por 1 fin 
-  de semana. Entonces, tenemos dos opciones:
+  de semana en el peor caso. El caso m\'as largo ocurre cuando $D = 5$ y $W = 5$ (Viernes).
+  Como el correo fue enviado el d\'ia $5$, la cuenta total pasa por el fin de semana
+  y luego avanza cinco d\'ias hasta llegar al siguiente Viernes. Gracias a eso, sabemos
+  que no llega a m\'as de un fin de semana.
+
+  Desde ahora en adelante, una cosa importante que debemos hacer es disminuir $W$ en uno para 
+  que la cuenta comience desde $0$ en vez de $1$.
+  
+  Entonces, tenemos dos opciones:
   \begin{enumerate}
-    \item Si los valores de entrada no pasan por el fin de semana, retornamos $D$
-    \item Si los valores de entrada pasan por el fin se semana, retornamos $D+2$
+    \item Si los valores de entrada no pasan por el fin de semana, retornamos $D$, al igual que en el primer caso.
+    \item Si los valores de entrada pasan por el fin se semana, retornamos $D+2$, por que se deben contar dos d\'ias del fin de semana.
   \end{enumerate}
 
   Para saber si pasa por el fin de semana, la suma de $D + W$ debe superar el valor $4$.
   Esta suma supera $4$ siempre que la espera se pasa del Viernes.
 
+  \vspace{10mm}
   \score{18} Se probarán varios casos donde $0 < D \leq 10$.
-  
-  Soluci\'on
 
   Ahora, han aumentado los l\'imites de $D$ y adem\'as $W$ ya no tiene restricci\'on,
   o sea que puede tomar un valor de $1$ a $7$. La soluci\'on anterior ya no es suficiente,
   porque como $D$ puede llegar hasta $10$, podemos llegar a contar m\'as de un fin de 
   semana. Tambi\'en, debemos considerar qu\'e pasa si el correo se env\'ia un S\'abado
-  o Domingo.
+  o Domingo y lo debemos tratar como si se mandara el Lunes siguiente. 
 
   Al igual que antes, debemos disminuir $W$ en uno para que la cuenta comience desde $0$
   en vez de $1$.
 
-  El primer caso: si $W$ es un d\'ia de semana ($0 \geq W \geq 4$). Si la suma de
-  d\'ias h\'abiles $D + W$ supera $4$, debemos a\~nadir $2$ d\'ias extras, como en el 
-  \'item anterior. Si $D + W$ superan $9$, eso significa que ahora se deben considerar $2$
+  El primer caso es cuando $W$ es un d\'ia de semana ($0 \leq W \leq 4$): si la suma de
+  $D + W$ supera $4$, debemos a\~nadir $2$ d\'ias extras, como en el 
+  \'item anterior. Pero debemos asegurarnos de que no llegue a dos fines de semana.
+  Este l\'imite ocurre cuando la espera de d\'ias $D$ supera una semana h\'abil completa.
+  Como la semana h\'abil tiene $5$ d\'ias, el segundo Viernes corresponde al valor $9$.
+  Ese es nuestro l\'imite superior, por lo que $W + D \leq 9$
+  
+  Ahora, si $D + W$ superan $9$, eso significa que ahora se deben contar $2$
   fines de semana al total de d\'ias de espera $D$, por lo que se a\~naden $4$ d\'ias a
   la suma.
   
-  El segundo caso: si $W$ es S\'abado o Domingo. En este caso, no vamos a considerar
-  $W$ para cu\'antos d\'ias de fin debemos a\~nadir. Lo vamos a considerar s\'olo para
-  la suma total de d\'ias de espera. Si el primer d\'ia era S\'abado, 
-  debemos incorporar a los d\'ias de espera tanto S\'abado como Domingo. Si el primer 
-  d\'ia era Domingo, debemos incorporar a la espera s\'olo el Domingo.
+  El segundo caso es cuando $W$ es S\'abado o Domingo: en este caso, no vamos a considerar
+  $W$ para cu\'antos d\'ias de fin debemos a\~nadir. Esto lo hacemos as\'i porque enviar 
+  un correo el fin de semana es equivalente a mandarlo el Lunes que sigue, o sea, $W = 0$.
+  Pero, no debemos olvidar incluir estos d\'ias a la espera final.
   
-  Para representar que $W$ no se debe considerar para determinar cu\'antos fines de
-  semana debemos contar, cambiamos su valor a cero despu\'es del paso del p\'arrafo
-  anterior.
+  Entonces, si el correo se env\'ia un S\'abado, debemos incorporar a los d\'ias de espera totales
+  tanto S\'abado como Domingo. Si el primer d\'ia era Domingo, debemos incorporar a la espera 
+  s\'olo el Domingo.
   
-  Por \'ultimo, hacemos algo similar al primer caso: si $D$ supera $4$, debemos a\~nadir
+  Despu\'es, hacemos algo lo mismo que antes: si $D + W$ supera $4$, debemos a\~nadir
   $2$ d\'ias extra, si supera $9$, debemos aumentar en $4$.
 
+  \vspace{10mm}
   \score{28} Se probarán varios casos donde $0 < D \leq 10^5$
-
-  Soluci\'on
 
   Ahora que $D$ tiene l\'imites muy grandes, debemos pensar una soluci\'on que sea 
   general. Las que hemos hecho hasta el momento, s\'olo manejan casos particulares.
   De todas formas, podemos observar de ellas que hay un patr\'on que podemos seguir.
 
-  Para cada soluci\'on usamos $D$ o $D + W$ para contar el n\'umero de fines de semana
-  que debemos a\~nadir. Para saber cu\'antos fines de semana debemos sumar, debemos
-  dividir $D$ o $D + W$ por $5$ para obtener el n\'umero de fines de semana. Cada vez
-  que esta suma llega a un m\'ultiplo de cinco, quiere decir que pasamos por una semana
-  completa, por eso es que dividimos por los cinco d\'ias de la semana de trabajo.
+  Para cada soluci\'on usamos $D + W$ para saber el n\'umero de fines de semana
+  que debemos a\~nadir. Para obtener ese n\'umero, debemos dividir $D + W$ por $5$,
+  ya que esto nos indica c\'antas veces nos pasamos del viernes y eso sucede cada vez
+  que esta suma llega a un m\'ultiplo de $5$, que representa los $5$ d\'ias de la semana 
+  de trabajo.
 
-  Luego, esta cantidad se multiplica por $2$ para obtener el total de d\'ias que se
-  deben a\~nadir al total.
+  Luego, esta cantidad se multiplica por $2$ para obtener la cantidad de d\'ias que se
+  deben a\~nadir a la espera.
 
-  Teniendo el total de d\'ias de fin de semana que nos faltan, s\'olo se los a\~adimos a
+  Teniendo el total de d\'ias de fin de semana que nos faltan, solo nos queda sumarlos a
   $D$, que son los d\'ias h\'abiles de espera.
 
+  Al igual que antes, si se env\'ia un correo el fin de semana, debemos interpretarlo como
+  si se mandara el Lunes que sigue (fijamos $W=0$). No debemos olvidar agreagar estos primeros
+  d\'ias a la suma total de espera.
+
+  \vspace{10mm}
+  \score{39} Se probarán varios casos donde $0 < D \leq 10^{10}$
+
+  Lo m\'as importante que debemos considerar en esta  \'ultima subtarea es que $D$ puede llegar a
+  tener un valor de $10^{10}$. Hasta ahora hemos usados variables de tipo $int$, pero el valor m\'as
+  grande que tiene este tipo de dato es $2,147,483,647$ o $4,294,967,295$ si fuera un $unsigned\ int$.
   
+  Ambos valores son menores a $10^{10}$, por lo que debemos usar variables de tipo $long\ long$ que puede
+  guardar valores mucho mayores, esto sirve tanto para $D$ como para guardar la suma total. No es necesario cambiar
+  el tipo de dato de $W$.
 
-  \score{39} Se probarán varios casos donde $0 < D \leq 10^{10}$ \\
-  Soluci\'on
+  Tambi\'en, aprovechamos de agrupar los casos de cuando $W$ es un S\'abado o Domingo en un mismo bloque.
+  Si restamos al n\'umero de d\'ias de la semana el valor de $W$, obtenemos cu\'antos d\'ias extra debemos sumar:
+  \begin{enumerate}
+    \item Cuando es S\'abado, o sea $W = 5$: $7 - W = 2$
+    \item Cuando es Domingo, o sea $W = 6$: $7 - W = 1$
+  \end{enumerate}
 \end{scoreDescription}
-
-\begin{sampleDescription}
-\sampleIO{sample-3}
-\sampleIO{sample-1}
-\sampleIO{sample-2}
-\sampleIO{sample-4}
-\end{sampleDescription}
 
 \end{document}
